@@ -1,0 +1,41 @@
+model {
+
+    ############################################
+    # A bugs model corresponding to the random effect model:
+    # deltaY ~ 1 + (1|Strain)
+    #
+    # Where each element of deltaY is the difference in phenotype between a treated and untreated subject
+    # Noninformative priors are used in this model.
+    #
+    ##
+
+
+
+    ##################################
+    ##  Priors for intercept
+    ##############################
+    intercept ~ dnorm(0, .000001)
+
+
+    ###################################
+    ## Strain Effect
+    ###################################
+    std.strain~ dunif(0,1000)
+    precision.strain <- pow(std.strain,-2)
+    for(i in 1:n.STRAIN.1)
+    {
+        ranef.strain[i] ~ dnorm(0, precision.strain)
+    }
+
+    std.epsilon ~ dunif(0,1000)
+    precision.epsilon <- pow(std.epsilon,-2)
+    #########################################
+    # Likelihood functions 
+    ###############################################
+    for(i in 1:n)
+    {
+        ##epsilon[i] ~ dnorm(0, precision.epsilon)
+       y [i]  ~ dnorm(intercept + ranef.strain[STRAIN.1.j[i]],
+                      precision.epsilon)
+    }
+}
