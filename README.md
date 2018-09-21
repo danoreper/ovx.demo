@@ -10,7 +10,7 @@ To locally run estimation, and generate bayesian p-values, strain-by-treatment c
 ovx.demo/src$ R CMD BATCH --no-save --no-restore ./ovx/main.R
 
 To run on the cluster, use bsub; e.g.,
-ovx2016/src$ bsub -M 32 R CMD BATCH --no-save --no-restore ./ovx/main.R '--args ../config/defaultBayes.yaml' 
+ovx.demo/src$ bsub -M 32 R CMD BATCH --no-save --no-restore ./ovx/main.R '--args ../config/defaultBayes.yaml' 
 
 
 ## YAML propery files:
