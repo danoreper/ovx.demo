@@ -1,7 +1,7 @@
 # ovx.demo
 
 ## Installation:
-Assumes R>=3.2. Assumes Jags has been installed. As of this writing all other dependencies are R packages, installed from biomaRt and CRAN. Known R dependencies include: coda, data.table, ggplot2, mvtnorm, parallel, pracma, stringr,
+Assumes R>=3.2. Assumes Jags has been installed. As of this writing all other dependencies are R packages, installed from biomaRt and CRAN. Known R dependencies include: coda, data.table, ggplot2, mvtnorm, parallel, pracma, stringr.
 
 ## Running the code:
 All main scripts assume the working directory is ovx.demo/src
