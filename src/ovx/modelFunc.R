@@ -1,6 +1,14 @@
+####################### 
+##
+## Functions specific to the ovx project that are called by the main.R driver
+##
+##
+
+## keep all functions in this scope to avoid naming collisions
 ovx = new.env(hash=T )
 fp = file.path
 
+##non ovx specific code, used to fit jags models and parallelize calls
 source("./fitjags.R")
 source("./parallel/bsub.R")
 
